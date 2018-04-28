@@ -1,5 +1,5 @@
 # split_train_val
-## purpose
+## Purpose
 To randomly split datasets into train datasets and validation datasets with the specific ratio(like 0.2)<br> 
 ## Requirement
 * 1、Visual Studio<br>
