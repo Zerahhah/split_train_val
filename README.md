@@ -1,6 +1,6 @@
 # split_train_val
 ## Purpose
-To randomly split datasets into train datasets and validation datasets with the specific ratio(like 0.2). And the split datasets are stored in their subfolders separately.<br> 
+To use Pytorch ImageFolder automatically loading train and validation dataset,the code randomly split the raw datasets(cannot use ImageFolder) into train datasets and validation datasets with the specific ratio(like 0.2). And the split datasets are stored in their subfolders separately.<br> 
 ## Requirement
 * 1、Visual Studio<br>
 * 2、{your categories}.txt, the content like this<br>
