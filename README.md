@@ -39,6 +39,9 @@ void SplitData::save_to_txt()
 ```cpp
 void SplitData::save_to_txt(std::string target_dir)
 ```
+the result txt ilke this:<br>
+bus,balabala
+{category},{file_name}
 ## Usage
 * 1)Call the constructor function with the required 4 parameters.<br>
 * 2-1)Then call the member function to split datasets into two folder. Each folder(train/validation) contains the folders which store the 
