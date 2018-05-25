@@ -33,9 +33,9 @@ public:
 				to_val_vector[i][j] = temp;
 			}
 		}
-	}//���캯��
+	}//构造函数
 
-	void moving(std::string source_dir) {
+	void moving(std::string source_dir) {//在当前目录生成train和val子目录，每个子目录下带有标签子目录，每个标签子目录下存放属于这一类的图片
 		std::string train_dir = source_dir + "\\train";
 		std::string val_dir = source_dir + "\\val";
 		if (CreateDirectory(train_dir.c_str(), nullptr) == false) {
@@ -77,6 +77,51 @@ public:
 		}//for
 		std::cout << "done" << std::endl;
 	}//
+
+	void save_to_txt() {//在当前目前下生成train.txt和val.txt文件
+		std::ofstream train("train.txt");
+		std::ofstream val("val.txt");
+		if (train.is_open() && val.is_open()) {
+			for (int i = 0; i < categories_num; ++i) {
+				for (int j = 0; j < category_id_mapping[i].size(); ++j) {
+					if (is_Same(to_val_vector[i], j)) {
+						val << category_id[i] << "," << category_id_mapping[i][j] << "\n";
+					}
+					else {
+						train << category_id[i] << "," << category_id_mapping[i][j] << "\n";
+					}
+				}
+			}
+			train.close();
+			val.close();
+			return;
+		}
+		else { return; }
+	}
+
+	void save_to_txt(std::string source_dir) {//在指定目前下生成train.txt和val.txt文件
+		std::string train_txt_dir = source_dir + "\\train.txt";
+		std::string val_txt_dir = source_dir + "\\val.txt";
+		std::ofstream train(train_txt_dir);
+		std::ofstream val(val_txt_dir);
+		if (train.is_open() && val.is_open()) {
+			for (int i = 0; i < categories_num; ++i) {
+				for (int j = 0; j < category_id_mapping[i].size(); ++j) {
+					if (is_Same(to_val_vector[i], j)) {
+						val << category_id[i] << "," << category_id_mapping[i][j] << "\n";
+					}
+					else {
+						train << category_id[i] << "," << category_id_mapping[i][j] << "\n";
+					}
+				}
+			}
+			train.close();
+			val.close();
+			return;
+		}
+		else { return; }
+	}
+
 private:
 	int categories_num;
 	std::vector<std::vector<std::string>> category_id_mapping;
