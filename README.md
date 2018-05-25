@@ -40,7 +40,7 @@ void SplitData::save_to_txt()
 void SplitData::save_to_txt(std::string target_dir)
 ```
 the result txt ilke this:<br>
-bus,balabala
+bus,balabala<br>
 {category},{file_name}
 ## Usage
 * 1)Call the constructor function with the required 4 parameters.<br>
