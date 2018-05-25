@@ -16,7 +16,7 @@ To use Pytorch ImageFolder automatically loading train and validation dataset,th
 864f56ad-1c85-11e8-aaf5-00163e025669,0<br>
 54b25ede-1c83-11e8-aaf2-00163e025669,0<br>
 1450b4f8-1c83-11e8-aaf2-00163e025669,0<br>
-{file_name},{category}<br>
+{file_name},{id}<br>
 ## Introduction
 The first two parameters are {your categories}.txt {category_mapping}.txt file. These txt file are in the path where you store {your cpp file}.<br> 
 The third parameter is the number of category. <br>
@@ -30,9 +30,16 @@ The member function moving. It require one parameter which is the path to the or
 ```cpp
 void SplitData::moving(std::string source_dir)
 ```
+The member function save_to_txt with no parameter creates train.txt and val.txt in your cpp_file's path.<br>
+The member function save_to_txt with one parameter creates train.txt and val.txt in the path you want.<br>
+```cpp
+void SplitData::save_to_txt()
+void SplitData::save_to_txt(std::string target_dir)
+```
 ## Usage
 Call the constructor function with the required 4 parameters.<br>
 Then call the member function to split datasets into two folder. Each folder(train/validation) contains the folders which store the 
 data belonging to each category.
 The directory structure should like this.
 ![result directory structure](https://github.com/Zerahhah/split_train_val/blob/master/result.png)
+If you do not want to create the subfolders or copy file into the subfolders(creating subfolders and cpoying files means double disk space, but it is friendly to Pytorch.torchvision.ImageFolder), you can call the member function save_to_txt. Then the train filenames and val filenames are separately saved to the train.txt and val.txt in your cpp_file's path or the path you want.
