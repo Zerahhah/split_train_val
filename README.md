@@ -44,4 +44,4 @@ void SplitData::save_to_txt(std::string target_dir)
 data belonging to each category.
 The directory structure should like this.
 ![result directory structure](https://github.com/Zerahhah/split_train_val/blob/master/result.png)
-* 2-2)If you do not want to create the subfolders or copy file into the subfolders(creating subfolders and cpoying files means double disk space, but it is friendly to Pytorch.torchvision.ImageFolder), you can call the member function save_to_txt. Then the train filenames and val filenames are separately saved to the train.txt and val.txt in your cpp_file's path or the path you want.
+* 2-2)If you do not want to create the subfolders or copy file into the subfolders(creating subfolders and cpoying files means double disk space, but it is friendly to Pytorch.torchvision.ImageFolder), you can call the member function save_to_txt. Then the train filenames and val filenames are separately saved to the train.txt and val.txt in your cpp_file's path or the path you want(it means you can not use ImageFolder to automatically load the dataset, it requires your class which inherits from torch.utils.data.Dataset).
