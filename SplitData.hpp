@@ -99,9 +99,9 @@ public:
 		else { return; }
 	}
 
-	void save_to_txt(std::string source_dir) {//在指定目前下生成train.txt和val.txt文件
-		std::string train_txt_dir = source_dir + "\\train.txt";
-		std::string val_txt_dir = source_dir + "\\val.txt";
+	void save_to_txt(std::string target_dir) {//在指定目前下生成train.txt和val.txt文件
+		std::string train_txt_dir = target_dir + "\\train.txt";
+		std::string val_txt_dir = target_dir + "\\val.txt";
 		std::ofstream train(train_txt_dir);
 		std::ofstream val(val_txt_dir);
 		if (train.is_open() && val.is_open()) {
