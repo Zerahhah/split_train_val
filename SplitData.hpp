@@ -15,10 +15,10 @@ int get_random_int(int upbound) {
 
 class SplitData {
 public:
-	SplitData(std::string categories, std::string list, int _categories_num, float ratio) {
+	SplitData(std::string categories, std::string category_mapping, int _categories_num, float ratio) {
 		categories_num = _categories_num;
 		category_id = get_categories(categories, categories_num);
-		category_id_mapping = label_to_id(list, categories_num);
+		category_id_mapping = label_to_id(category_mapping, categories_num);
 		to_val_vector.resize(categories_num);
 
 		std::cout << "creating random num for moving datasets to val_dir..." << std::endl;
