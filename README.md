@@ -34,6 +34,8 @@ The member function save_to_txt with no parameter creates train.txt and val.txt 
 The member function save_to_txt with one parameter creates train.txt and val.txt in the path you want.<br>
 ```cpp
 void SplitData::save_to_txt()
+```
+```cpp
 void SplitData::save_to_txt(std::string target_dir)
 ```
 ## Usage
